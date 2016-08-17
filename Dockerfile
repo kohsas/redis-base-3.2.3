@@ -9,7 +9,7 @@ MAINTAINER ashok.satyanarayana@gmail.com
 RUN apt-get update
 RUN apt-get install -y build-essential
 ENV REDIS_VERSION 3.2.3
-RUN wget http://download.redis.io/releases/redis-3.2.3.tar.gz
+RUN wget --output-document redis-$REDIS_VERSION.tar.gz http://download.redis.io/releases/redis-$REDIS_VERSION.tar.gz
 RUN tar xzf redis-$REDIS_VERSION.tar.gz
 RUN cd redis-$REDIS_VERSION && make
 RUN cd redis-$REDIS_VERSION && make install
